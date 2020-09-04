@@ -1,0 +1,53 @@
+:host {
+    z-index: 4;
+}
+
+.main-toolbar {
+    height: 64px;
+    padding-left: 16px;
+}
+
+.more-btn {
+    height: 100%;
+    min-width: 70px;
+}
+
+.mat-icon-button {
+    margin-right: 10px;
+}
+
+.toolbar-panel {
+    background: #F0EFF5 !important;
+}
+
+.input-search {
+    max-width: 70%;
+    width: 40%;
+}
+
+.select-combo{
+    margin-right: 17px;
+}
+
+.i-search {
+    width: 90%;
+    border: 1px solid transparent;
+    font-size: 13px;
+    outline: none;
+    padding: 0 0 0 26px;
+    border-radius: 3px;
+    background-image: url(../../../assets/images/search.png);
+    background-repeat: no-repeat;
+    background-position: 3% 40%;
+    background: #ffffff !important;
+}
+
+.item-heading {
+    line-height: 20px;
+
+    span {
+        font-size: 10px;
+        color: #999999;
+        font-weight: normal;
+    }
+}

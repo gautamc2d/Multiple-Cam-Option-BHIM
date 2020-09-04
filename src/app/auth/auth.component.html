@@ -1,0 +1,27 @@
+<mat-sidenav-container fullscreen class="m-2">
+  <mat-sidenav [mode]="sideNavMode" class="sidenav" #sidenav [opened]="sideNavOpened" style="overflow: hidden;">
+    <mat-toolbar class="b-border back-color-1">
+      <h1 class="logo">
+        <img src="../../../assets/Logo-S.png" class="img-logo" />
+      </h1>
+    </mat-toolbar>
+    <app-sidemenu></app-sidemenu>
+  </mat-sidenav>
+  <mat-sidenav-content style="z-index: unset;overflow: hidden;">
+    <mat-drawer-container fullscreen>
+      <mat-drawer mode="side" #drawer class="drawer" [opened]="matDrawerOpened" style="overflow: hidden;">
+        <mat-toolbar class="back-color-1">
+          <img src="./assets/logo.codetok.png" width="36px">
+        </mat-toolbar>
+        <app-sidemenu [iconOnly]="true"></app-sidemenu>
+      </mat-drawer>
+      <mat-drawer-content class="back-color-2" style="overflow: hidden;">
+        <app-toolbar [sidenav]="sidenav" [drawer]="drawer" [matDrawerShow]="matDrawerShow" style="z-index: 500">
+        </app-toolbar>
+        <perfect-scrollbar class="pl-2">
+          <router-outlet></router-outlet>
+        </perfect-scrollbar>
+      </mat-drawer-content>
+    </mat-drawer-container>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,38 @@
+  <div class="login-main">
+    <div class="example-container" fxLayout="column" fxLayoutGap="10px" fxFlex=100 fxLayoutAlign="flex-start">
+      <div fxFlex="100" fxLayout="row" fxLayoutGap="0px" fxLayout.lt-sm="column">
+        <div fxFlex="100" fxFlex.lt-sm=100>
+          <h4 class="heading-1"><img src="../../../assets/Logo-S.png" class="img-logo" /></h4>
+        </div>
+      </div>
+      <div class="p-20 main-form" fxFlex="100" fxLayout="row" fxLayoutGap="0px" fxLayout.lt-sm="column">
+        <div fxFlex="70" fxFlex.lt-sm=100></div>
+        <div fxFlex="25" fxFlex.lt-sm=100>
+          <div class="p-20 form" fxFlex="100" fxLayout="row wrap" fxLayoutGap="0px" fxLayout.lt-sm="column">
+            <div fxFlex="100" fxFlex.lt-sm=100>
+              <h3 class="login-heading">Log In</h3>
+              <div class="form-div">
+                <form class="login-form" [formGroup]="loginPageForm" novalidate>
+                  <input type="text" placeholder="Username" formControlName="EmailID" />
+                  <input type="Password" placeholder="Password" formControlName="Password" />
+                  <button class="btn btn-login" [disabled]="!loginPageForm.valid" (click)="submitLogin()">Log
+                    In</button>
+                </form>
+              </div>
+            </div>
+            <div fxFlex="100" fxFlex.lt-sm=100>
+              <p class="c-right">2019 &copy;, QIS India </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div fxFlex="100" fxLayout="row" fxLayoutGap="0px" fxLayout.lt-sm="column">
+        <div fxFlex="100" fxFlex.lt-sm=100>
+          <div class="copyright col-md-12">
+            <p class="c-right">&nbsp;</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

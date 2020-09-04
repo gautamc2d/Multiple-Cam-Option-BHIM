@@ -1,0 +1,5 @@
+<perfect-scrollbar class="pt-2" style="height: calc(100% - 33px);">
+  <div fxLayout="column">
+    <app-sidemenu-item *ngFor="let menu of menus" [menu]="menu" [iconOnly]="iconOnly" (openLinkMenu) = "openMenu($event)"> </app-sidemenu-item>
+  </div>
+</perfect-scrollbar>

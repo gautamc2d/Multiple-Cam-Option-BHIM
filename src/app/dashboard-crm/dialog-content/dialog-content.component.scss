@@ -1,0 +1,34 @@
+#canvasDiv { 
+    overflow: hidden;
+}
+#canvas {
+  position: absolute; 
+  // top: 0px;
+  // left: 0px;
+  // height: 100%;
+  // width: 100%;
+  // padding: 1%;
+  top: 10%;
+  left: 10%;
+  height: 80%;
+  width: 80%;
+}
+.mat-dialog-actions {
+  bottom: 2.5rem;
+  position: absolute;
+  right: 2rem;
+  color: #fff;
+  text-shadow: 0 2px 3px rgba(0,0,0,0.5);
+}
+.mat-dialog-title {
+  color: #fff;
+  z-index: 1;
+  position: absolute;
+  top: 3rem;
+}
+.closeModal .mat-button {box-shadow: 0 2px 3px red;
+  color: #fff;
+  text-shadow: 0 2px 3px rgba(0,0,0,0.5);}
+
+// .cdk-overlay-dark-backdrop {
+//   background: rgba(0,0,0,0.9)!important;}

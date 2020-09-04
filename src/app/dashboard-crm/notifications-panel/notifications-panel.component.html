@@ -1,0 +1,25 @@
+<div class="table-container border-radius">
+  <div class="example-container">
+    <h4 class="total-count bck-white"> <span class="item-title">Total Notifications - </span> {{totlNotifications}}</h4>
+    <table mat-table [dataSource]="dataSource" matSort>
+      <ng-container matColumnDef="Message">
+        <td class="value-cell" mat-cell *matCellDef="let element">
+          {{element.Message}} <br />
+          <span class="updated-time">Updated:
+            {{ dateFormatToISO(element.Updated_on) | date: 'dd/MM/yyyy hh:mm:ss'}}</span>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Actions">
+        <td class="value-cell" mat-cell *matCellDef="let element">
+          <mat-icon svgIcon="delete" aria-hidden="false" aria-label="Delete">delete</mat-icon>
+        </td>
+      </ng-container>
+
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [length]="dataSource.length" [pageSize]="5" [pageSizeOptions]="[5, 10, 25, 100]"
+      showFirstLastButtons>
+    </mat-paginator>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="toolbar-user-container">
+  <button mat-button (click)="isOpen = !isOpen" class="toolbar-user-btn p-0" [class.open]="isOpen"
+    [ngStyle.xs]="{'min-width': '70px'}">
+    <span fxLayout="row" fxLayoutAlign="start center" class="img-user back-color-1">
+      <img class="avatar" src="../../../assets/images/user.svg">
+    </span>
+  </button>
+
+  <div class="dropdown mat-elevation-z1" [class.open]="isOpen">
+    <div class="content">
+      <mat-nav-list>
+        <mat-list-item>
+          <a matLine (click)="logOut()"><span class="name" fxHide fxShow.gt-xs>{{currentUser?.currentUserName || 'User'}}</span></a>
+          <button mat-icon-button>
+            <mat-icon svgIcon="exit" aria-hidden="false" aria-label="LogOut"></mat-icon>
+          </button>
+        </mat-list-item>
+      </mat-nav-list>
+    </div>
+  </div>
+</div>

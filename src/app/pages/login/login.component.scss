@@ -1,0 +1,103 @@
+@import '../../../assets/css/main.scss';
+
+body {
+    overflow: auto;
+    display: grid;
+}
+
+.login-main {
+    background-image: url(../../../assets/images/bg_login.jpg);
+    background-repeat: no-repeat;
+    width: $hundred;
+    height: $hundred;
+}
+
+.example-container {
+    width: 100%;
+}
+
+.main-form {
+    padding-top: 4em;
+}
+
+.heading-1 {
+    background-color: $c-white;
+    opacity: 0.6;
+    padding: 1.1em 2em;
+    margin-top: $empty;
+    font-size: 2.2em;
+    color: $c-black;
+}
+
+.login-heading {
+    color: $c-black;
+    margin: $m-0;
+    text-align: $t-left;
+    padding: $empty $empty 0.7em $empty;
+    font-size: 1.6em;
+}
+
+.form {
+    z-index: 10000000;
+    margin: $empty;
+    padding: 2.1em 2em;
+    text-align: $t-center;
+    background-color: #ffffff73;
+    border-radius: $font-8 - 2;
+    height: 270px;
+    max-height: 325px;
+}
+
+.form-div {
+    width: 100%;
+    left: 70.5em;
+    z-index: 1;
+    top: 10em;
+
+    input {
+        outline: $empty;
+        background: $c-white;
+        width: $hundred;
+        border: $empty;
+        margin: $empty $empty $font-10;
+        padding: $font-14 - 3;
+        box-sizing: border-box;
+        font-size: $font-14;
+        border-radius: 4px;
+    }
+}
+
+.btn-login {
+    outline: $empty;
+    width: $hundred;
+    border: $empty;
+    padding: $font-14 + 1;
+    color: $c-white;
+    font-size: $font-14;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    background-color: $c-1D334B;
+    margin-top: 0.7em;
+}
+
+.form button:hover,
+.form button:active,
+.form button:focus {
+    background: $c-1D334B;
+    color: $c-white;
+}
+
+.c-right {
+    color: $c-white;
+    float: $t-right;
+    font-size: 0.9em;
+    font-weight: 300;
+    padding-top: 4em;
+}
+
+@media(min-width: 375px) and (max-width : 667px) {
+    .main-form {
+        padding-top: 2em;
+    }
+}

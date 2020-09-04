@@ -1,0 +1,84 @@
+.example-container>* {
+    width: 100%;
+}
+
+.battery-row {
+    padding: 10px;
+}
+
+.batterynumber {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 0;
+    border-radius: 3px;
+    text-align: center;
+    color: #ffffff;
+    font-weight: normal;
+    padding-top: 3px;
+}
+
+.param-battery {
+    color: #333333;
+    font-size: 14px;
+    padding-left: 5px;
+}
+
+.b-line {
+    padding-left: 3px;
+}
+
+.color1 {
+    background-color: #1EC9B7;
+}
+
+.color2 {
+    background-color: #FD397A !important;
+}
+
+.color3 {
+    background-color: #FFB822 !important;
+}
+
+.primary-row {
+    padding: 15px 0 15px 15px;
+}
+
+.cust-height {
+    max-height: 900px;
+    min-height: 650px;
+}
+
+.popover {
+    width: 580px !important;
+    max-width: 650px !important;
+    height: 220px !important;
+}
+// camera css
+#canvasDiv { 
+    overflow: hidden;
+  }
+#canvasDiv img{
+  height: 9rem;
+  width: 100%;
+}  
+.mat-tab-label {
+    height: 48px;
+    padding: 0 16px !important;
+    cursor: pointer;
+    box-sizing: border-box;
+    opacity: .6;
+    min-width: 0px !important;
+    text-align: center;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    position: relative;
+}
+.mat-ink-bar {
+    width: 70px;
+}
+.playbtn{
+    z-index: 2; position: absolute; inset: 0px; max-width: 75px; max-height: 75px; 
+                    margin: auto; opacity: 0.7; cursor: pointer; display: block;
+}

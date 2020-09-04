@@ -1,0 +1,77 @@
+<div class="bck-white Report-details">
+  <div class="example-container" fxLayoutAlign="space-between center" fxLayout="column" fxLayoutGap="0px" fxFlex="100"
+    fxLayoutAlign="flex-start">
+    <div class="p-20" fxFlex="0" fxLayout="column" fxLayoutGap="10px" fxLayout.lt-sm="column">
+      <form class="report-form" [formGroup]="report" novalidate>
+        <div fxFlex="100" fxLayout="row" fxLayoutGap="0" fxLayout.lt-sm="column">
+          <div fxFlex="30" fxFlex.lt-sm=100>
+            <label class="label-text-small m-0" for="ReportID">Report Name <span class="star-mark">*</span></label>
+            <ng-select [items]="reportNames" [searchable]="false" [selectOnTab]="true" bindValue="ReportID"
+              bindLabel="ReportName" labelForId="ReportID" placeholder="Select" formControlName="ReportID"
+              (change)="reportChange($event, 'report')">
+            </ng-select>
+          </div>
+          <div fxFlex="30" fxFlex.lt-sm=100>
+            <label class="label-text-small m-0" for="LocationID">Location <span class="star-mark">*</span></label>
+            <ng-select [items]="reportNames" [searchable]="false" [selectOnTab]="true" bindValue="location_id"
+              bindLabel="location_name" labelForId="LocationID" placeholder="Select" formControlName="LocationID"
+              (change)="reportChange($event, 'loc')">
+            </ng-select>
+          </div>
+          <div class="date-prop" fxFlex="15" fxFlex.lt-sm=100>
+            <label class="label-text-small m-0" for="StartTime">From</label>
+            <my-date-picker name="StartTime" [options]="myDatePickerOptions" [placeholder]="placeholder"
+              formControlName="StartTime"></my-date-picker>
+          </div>
+          <div class="date-prop" fxFlex="15" fxFlex.lt-sm=100>
+            <label class="label-text-small m-0" for="EndTime">To</label>
+            <my-date-picker name="EndTime" [options]="myDatePickerOptions" [placeholder]="placeholder"
+              formControlName="EndTime"></my-date-picker>
+          </div>
+          <div class="button-prop" fxFlex="2" fxFlex.lt-sm=100>
+            <button class="btn btn-enter p-0" [disabled]="!report.valid" (click)="showReport()"><img
+                src="../../../assets/images/enter.svg" class="img-enter" /></button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="border-t" fxFlex="100" fxLayout="column" fxLayoutGap="0px" fxLayout.lt-sm="column"
+      [ngClass]="{'displayNone': !reportBool}">
+      <div fxFlex="100" fxFlex.lt-sm=0 fxLayout="row" class="details-row">
+        <div fxFlex="50" fxFlex.lt-sm=0 fxLayout="column">
+          <p class="m-0"><span class="font-16"><b>Report Name </b> </span> <span class="font-14">
+              {{reportModel?.Rname}}</span></p>
+        </div>
+        <div fxFlex="50" fxFlex.lt-sm=0 fxLayout="column">
+          <p class="m-0"><span class="font-16"><b>Location Name </b> </span> <span class="font-14">
+              {{reportModel?.Lname}}</span>
+          </p>
+        </div>
+        <div fxFlex="3" fxFlex.lt-sm=0 fxLayout="column" class="btn-div">
+          <button class="btn btn-chart p-0">
+            <img src="../../../assets/images/chart.svg" class="img-chart" />
+          </button>
+        </div>
+        <div fxFlex="10" fxFlex.lt-sm=0 fxLayout="column">
+          <button type="button" class="btn btn-export" (click)="downloadReport()">Export</button>
+        </div>
+      </div>
+      <div fxFlex="100" fxFlex.lt-sm=100>
+        <div style="height:410px;">
+          <table mat-table [dataSource]=" dataSource" matSort>
+            <ng-container *ngFor="let disCol of displayedColumns; let colIndex = index" matColumnDef="{{disCol}}">
+              <th class="header-cell" mat-header-cell *matHeaderCellDef mat-sort-header><b>{{disCol}}</b></th>
+              <td class="value-cell" mat-cell *matCellDef="let element"> {{element[disCol]}} </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+          <mat-paginator [length]="dataSource.length" [pageSize]="5" [pageSizeOptions]="[5, 10, 25, 100]"
+            showFirstLastButtons>
+          </mat-paginator>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

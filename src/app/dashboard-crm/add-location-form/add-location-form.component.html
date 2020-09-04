@@ -1,0 +1,103 @@
+<div class="p-50 bck-white add-location">
+  <form class="login-form" [formGroup]="addLocationForm" novalidate>
+    <div class="example-container" fxLayoutAlign="space-between center" fxLayout="column" fxLayoutGap="20px" fxFlex=97
+      fxLayoutAlign="flex-start">
+      <div fxFlex="100" fxLayout="row" fxLayoutGap="30px" fxLayout.lt-sm="column">
+        <div fxFlex="49" fxFlex.lt-sm=100>
+          <div class="item-column">
+            <mat-form-field>
+              <label type="label" class="form-label-text">Location Name <span class="star-mark">*</span></label>
+              <input matInput type="text" formControlName="location_name" />
+            </mat-form-field>
+          </div>
+          <div class="item-column">
+            <mat-form-field>
+              <label type="label" class="form-label-text">Address 1 <span class="star-mark">*</span></label>
+              <input matInput type="text" formControlName="address1" />
+            </mat-form-field>
+          </div>
+          <div class="item-column">
+            <mat-form-field>
+              <label type="label" class="form-label-text">Address 2 <span class="star-mark">*</span></label>
+              <input matInput type="text" formControlName="address2" />
+            </mat-form-field>
+          </div>
+          <div class="item-column">
+            <mat-form-field>
+              <label type="label" class="form-label-text" for="city">City <span class="star-mark">*</span></label>
+              <input matInput type="text" formControlName="city" />
+            </mat-form-field>
+          </div>
+          <div class="item-column">
+            <mat-form-field>
+              <label type="label" class="form-label-text" for="state">State <span class="star-mark">*</span></label>
+              <input matInput type="text" formControlName="state" />
+            </mat-form-field>
+          </div>
+          <div class="item-column">
+            <mat-form-field>
+              <label type="label" class="form-label-text" for="country">Country <span class="star-mark">*</span></label>
+              <input matInput type="text" formControlName="country" />
+            </mat-form-field>
+          </div>
+        </div>
+        <div fxFlex="49" fxFlex.lt-sm=100>
+          <div class="item-column">
+            <mat-form-field [floatLabel]="'never'" floatPlaceholder="never">
+              <label type="label" class="form-label-text">Installation Date <span class="star-mark">*</span></label>
+              <input matInput [matDatepicker]="picker" placeholder="DD-MM-YYYY" formControlName="installed_on" />
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="item-column">
+            <mat-form-field>
+              <label type="label" class="form-label-text">Total Load Capacity <span class="star-mark">*</span></label>
+              <input matInput type="text" formControlName="totalloadcap" />
+            </mat-form-field>
+          </div>
+          <div class="item-column">
+            <mat-form-field>
+              <label type="label" class="form-label-text">Location Manager <span class="star-mark">*</span></label>
+              <input matInput type="text" formControlName="location_manager" />
+            </mat-form-field>
+          </div>
+          <div class="item-column">
+            <mat-form-field>
+              <label type="label" class="form-label-text">Contact Number <span class="star-mark">*</span></label>
+              <input matInput type="number" formControlName="manager_mobile" />
+            </mat-form-field>
+          </div>
+          <div class="item-column">
+            <mat-form-field>
+              <label type="label" class="form-label-text">Email <span class="star-mark">*</span></label>
+              <input matInput type="email" formControlName="manager_email" />
+            </mat-form-field>
+          </div>
+          <div class="item-column">
+            <mat-form-field>
+              <label type="label" class="form-label-text">Number Of Batteries <span class="star-mark">*</span></label>
+              <input matInput type="number" formControlName="noofbatteries" />
+            </mat-form-field>
+          </div>
+        </div>
+        <div fxFlex="49" fxFlex.lt-sm=100></div>
+      </div>
+
+      <div fxFlex="100" fxLayout="row" fxLayoutGap="30px" fxLayout.lt-sm="column">
+        <div fxFlex="49" fxFlex.lt-sm=100>
+          <mat-card-actions>
+            <button mat-flat-button class="normal-button f-right" (click)="cancel()">Cancel</button>
+          </mat-card-actions>
+        </div>
+        <div fxFlex="49" fxFlex.lt-sm=100>
+          <mat-card-actions>
+            <button mat-flat-button class="action-button f-left" [disabled]="!addLocationForm.valid"
+              (click)="saveLocation()">{{mode === 'Add' ? 'Add' : 'Save'}}</button>
+          </mat-card-actions>
+        </div>
+        <div fxFlex="49" fxFlex.lt-sm=100></div>
+      </div>
+    </div>
+  </form>
+</div>

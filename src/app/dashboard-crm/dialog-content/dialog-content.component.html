@@ -1,0 +1,15 @@
+<h2 mat-dialog-title>Currently Watching Camera {{data.cameraNum}}</h2>
+
+
+<mat-dialog-content class="mat-typography">
+  <div id="canvasDiv">
+    <canvas #streaming id="canvas"></canvas>
+    <!-- <canvas #{this should be dynamic} id="canvas"></canvas> -->
+    <!-- <ng-container data-url=*ngComponentOutlet="data.component" class="jsmpeg"></ng-container> -->
+    <!-- <div class="jsmpeg" data-url="<url>"></div> -->
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end" class="closeModal">
+  <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>

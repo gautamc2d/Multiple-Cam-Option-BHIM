@@ -1,0 +1,26 @@
+.example-container>* {
+  width: 100%;
+  margin-bottom: 3em;
+}
+
+.add-location {
+  border-radius: 5px;
+}
+
+.item-column {
+  label {
+    font-weight: normal;
+  }
+
+  .mat-form-field {
+    width: 100%;
+  }
+
+  input {
+    height: 34px;
+    border: 1px solid #cccccc;
+    outline: none;
+    margin-top: 0.2em;
+    padding: 0 10px;
+  }
+}

@@ -1,0 +1,49 @@
+<div class="table-container">
+  <div class="example-container">
+    <h4 class="total-count bck-white"> <span class="item-title">Total Location - </span> {{totlLocations}}</h4>
+    <table mat-table [dataSource]="dataSource" matSort>
+      <ng-container matColumnDef="location_name">
+        <th class="header-cell" mat-header-cell *matHeaderCellDef mat-sort-header>Location Name</th>
+        <td class="value-cell cursor-hand" mat-cell *matCellDef="let element" (click)="editing(element)">
+          {{element.location_name}} <br />
+          <span class="updated-time">Updated:
+            {{ dateFormatToISO(element.Updated_on) | date: 'dd/MM/yyyy hh:mm:ss'}}</span>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="AlarmName">
+        <th class="header-cell" mat-header-cell *matHeaderCellDef mat-sort-header>Alarms/Events</th>
+        <td class="value-cell" mat-cell *matCellDef="let element"
+          title="Generated On: {{ dateFormatToISO(element.AlarmTime) | date: 'dd/MM/yyyy hh:mm:ss'}}">
+          {{element.AlarmName}}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Voltage">
+        <th class="header-cell" mat-header-cell *matHeaderCellDef mat-sort-header> Voltage </th>
+        <td class="value-cell" mat-cell *matCellDef="let element"> {{element.Voltage}} V</td>
+      </ng-container>
+
+      <ng-container matColumnDef="RoomTemp">
+        <th class="header-cell" mat-header-cell *matHeaderCellDef mat-sort-header> Room Temp</th>
+        <td class="value-cell" mat-cell *matCellDef="let element"> {{element.RoomTemp}} &#8451;</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Actions">
+        <th class="header-cell" mat-header-cell *matHeaderCellDef> Actions</th>
+        <td class="value-cell" mat-cell *matCellDef="let element">
+          <mat-icon class="cursor-hand" svgIcon="edit" aria-hidden="false" aria-label="Edit"
+            (click)="editingLocation(element)"></mat-icon>
+          <mat-icon class="cursor-hand" svgIcon="delete" aria-hidden="false" aria-label="Delete"
+            (click)="deleting(element)"></mat-icon>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [length]="dataSource.length" [pageSize]="5" [pageSizeOptions]="[5, 10, 25, 100]"
+      showFirstLastButtons>
+    </mat-paginator>
+  </div>
+</div>

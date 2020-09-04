@@ -1,0 +1,56 @@
+.report-form {
+    width: 100%;
+
+    .ng-select {
+        width: 93%;
+        margin-top: 10px;
+    }
+
+    .ng-select-container {
+        border-radius: 3px;
+    }
+
+    .date-prop {
+        margin-right: 2% !important;
+    }
+
+    .button-prop {
+        padding-top: 3%;
+    }
+
+    .btn-enter {
+        display: flex;
+        margin: 0 auto;
+        justify-content: center;
+        background-color: #506fe4;
+    }
+}
+
+.btn-div {
+    margin-right: 2%;
+}
+
+.details-row {
+    padding: 10px 30px;
+    border-bottom: 1px solid #999999;
+}
+
+.btn-export {
+    background-color: #506fe4;
+    color: #ffffff;
+}
+
+.btn-chart {
+    background: transparent;
+    border: 1px solid #cccccc;
+    border-radius: 0;
+    width: 35px;
+}
+
+.mydp {
+    margin-top: 9px !important;
+
+    .selectorarrow {
+        z-index: 1000 !important;
+    }
+}
