@@ -1,12 +1,12 @@
-import { Component, OnInit, OnDestroy, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewEncapsulation, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { SharedService } from '../../shared/shared.service';
 import { WebApiURL } from '../../shared/WebApiNames';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as Highcharts from 'highcharts';
-// import JSMpeg from 'jsmpeg-player';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogContentComponent } from '../dialog-content/dialog-content.component';
+import JSMpeg from 'jsmpeg-player';
 
 @Component({
   selector: 'app-loc-list',
@@ -14,7 +14,7 @@ import { DialogContentComponent } from '../dialog-content/dialog-content.compone
   styleUrls: ['./loc-list.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class LocListComponent implements OnInit, OnDestroy {
+export class LocListComponent implements OnInit, OnDestroy , AfterViewInit{
 
   public batteryData: any;
   public batCount: number = 0;
@@ -43,17 +43,13 @@ export class LocListComponent implements OnInit, OnDestroy {
    */
 
    //camera
-  // @ViewChild('streaming') streamingcanvas: ElementRef;
+  @ViewChild('streaming') streamingcanvas: ElementRef;
 
-  // player:any;
+  player:any;
 
-  // paused: boolean;
+  paused: boolean;
 
   closeResult = '';
-
-
-  // @ViewChild('canvas') canvas: ElementRef; 
-  // canvas = document.getElementById("canvas");
 
 
   constructor(private sharedService: SharedService,
@@ -73,11 +69,22 @@ export class LocListComponent implements OnInit, OnDestroy {
     this.getTotalBatteriesCount();
     this.initChart();
 
-    // camera
-      //     this.player = new JSMpeg.Player('ws://45.79.121.63:8082/s', {
-      //   canvas: this.streamingcanvas.nativeElement, autoplay: true, audio: true, loop: true
-      // });
+    //camera
+          this.player = new JSMpeg.Player('ws://45.79.121.63:8082/s', {
+        canvas: this.streamingcanvas.nativeElement, autoplay: true, audio: true
+      });
+      // setTimeout( () => {
+      //   this.player.pause();
+      //   console.log("is paused");
+      //  }, 5000)
   }
+
+  ngAfterViewInit() {
+    setTimeout( () => {
+        this.player.pause();
+        console.log("is paused");
+        }, 1000)
+    }
 
   ngOnDestroy() { }
 
